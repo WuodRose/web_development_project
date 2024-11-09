@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Management System - Sign Up</title>
+    <meta name="description" content="Expense Tracker - Sign Up">
+    <meta name="author" content="Wuodrose">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/signup.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="background">
+    <header>
+        <div class="logo">EXPENSE MANAGEMENT SYSTEM</div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/expense-list">Expense </a> 
+            <a href="/login">Login</a>  
+            <a href="/signup">Sing Up</a> 
+        </nav>
+    </header>
+
+    <!-- Login Form -->
+    <div class="wrapper" id="login-section">
+        <div class="container">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required />
+                <input type="password" id="login-password" placeholder="Password" required />
+                <button class="submit" id="login-button">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-register">Register here</a></p>
+        </div>
+    </div>
+
+    <!-- Register Form (Initially Hidden) -->
+    <div class="wrapper" id="register-section" style="display: none;">
+        <div class="container">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" id="register-name" placeholder="Full Name" required />
+                <input type="email" id="register-email" placeholder="Email" required />
+                <input type="password" id="register-password" placeholder="Password" required />
+                <button class="submit" id="register-button">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Expense Tracker App. All rights reserved by {Michael Watata}</p>
+    </footer>
+
+    <script src="JS/signup.js"></script>
+    <script src="JS/login.js"></script>
+    <script src="JS/script1.js"></script>
+
+</body>
+</html>

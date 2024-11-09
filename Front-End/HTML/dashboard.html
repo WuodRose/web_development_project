@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Management Dashboard</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .stats-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 20%;
+        }
+
+        .charts {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .chart-container {
+            width: 45%;
+        }
+
+        .form-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
+
+        .form-container h3 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        /* New Section for Expense List Link */
+        .expense-list-link {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .expense-list-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .expense-list-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Expense Management System Dashboard
+    </header>
+    
+    <!-- Link to Expense List Page -->
+    <div class="expense-list-link">
+        <a href="/expense-list">Go to Expense List Page</a>
+    </div>
+    
+    <div class="container">
+        <!-- Total Balance -->
+        <div class="stats-card">
+            <h2>Total Balance</h2>
+            <p>$15,000</p>
+        </div>
+
+        <!-- Total Income -->
+        <div class="stats-card">
+            <h2>Total Income</h2>
+            <p>$25,000</p>
+        </div>
+
+        <!-- Total Expenses -->
+        <div class="stats-card">
+            <h2>Total Expenses</h2>
+            <p>$10,000</p>
+        </div>
+
+        <!-- Remaining Budget -->
+        <div class="stats-card">
+            <h2>Remaining Budget</h2>
+            <p>$5,000</p>
+        </div>
+    </div>
+
+    <div class="charts">
+        <!-- Chart Section 1: Pie Chart -->
+        <div class="chart-container">
+            <h3>Expense Breakdown (Pie Chart)</h3>
+            <canvas id="expensePieChart"></canvas>
+        </div>
+
+        <!-- Chart Section 2: Line Chart -->
+        <div class="chart-container">
+            <h3>Income vs Expenses (Line Chart)</h3>
+            <canvas id="incomeExpenseLineChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Transaction Form -->
+    <div class="form-container">
+        <h3>Add New Transaction</h3>
+        <form id="transactionForm">
+            <div class="form-group">
+                <label for="transactionType">Transaction Type</label>
+                <select id="transactionType" required>
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="transactionCategory">Category</label>
+                <select id="transactionCategory" required>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="transactionName">Name</label>
+                <input type="text" id="transactionName" placeholder="Transaction Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="transactionDescription">Description</label>
+                <input type="text" id="transactionDescription" placeholder="Transaction Description" required>
+            </div>
+
+            <div class="form-group">
+                <label for="transactionAmount">Amount</label>
+                <input type="number" id="transactionAmount" placeholder="Enter Amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="transactionDate">Date</label>
+                <input type="date" id="transactionDate" required>
+            </div>
+
+            <button type="submit">Add Transaction</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../JS/dashboard.js"></script>
+    <script src="../JS/xx.js"></script>
+</body>
+</html>
